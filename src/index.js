@@ -4,6 +4,8 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js"
 import userRoutes from "./routes/userRoutes.js"
+import workoutRouters from "./routes/workoutRoutes.js";
+import nutritionRoutes from "./routes/nutritionRoutes.js"
 
 dotenv.config();
 connectDB();
@@ -14,6 +16,8 @@ app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/workout", workoutRouters);
+app.use("/api/nutrition", nutritionRoutes)
 
 app.get("/", (req, res) => {
     res.send("Fitness chat bot API is running...");
