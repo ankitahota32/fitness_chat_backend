@@ -4,14 +4,14 @@ const exerciseSchema = mongoose.Schema({
     name: { type: String, required: true },
     sets: { type: Number },
     reps: { type: Number },
-    duration: { types: Number }
+    duration: { type: Number }
 });
 
 const workoutSchema = mongoose.Schema(
     {
         user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
         name: { type: String, required: true },
-        execises: [exerciseSchema],
+        exercises: [exerciseSchema],
         date: { type: Date, default: Date.now },
     },
     { timestamps: true }

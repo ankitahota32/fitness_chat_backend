@@ -5,7 +5,7 @@ export const createNutrition = async (req, res) => {
         const nutrition = new Nutrition({
             user: req.user.id,
             meal: req.body.meal,
-            foodItem: req.body.foodItem,
+            foodItems: req.body.foodItems,
         })
         const savedNutrition = await nutrition.save();
         res.status(201).json(savedNutrition);
